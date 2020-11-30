@@ -33,7 +33,7 @@ self.addEventListener('fetch', function(event) {
 });
 
 
-import("./DB.js");
+//import("./DB.js");
 
 function Change() {
   console.log("change");

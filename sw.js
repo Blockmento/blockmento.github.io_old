@@ -31,3 +31,10 @@ self.addEventListener('fetch', function(event) {
     )
   );
 });
+
+function Change() {
+  console.log("change");
+  saveNetwork(navigator.connection.type, navigator.onLine);
+}
+
+navigator.connection.addEventListener('typechange', Change);

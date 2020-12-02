@@ -63,7 +63,7 @@ function getTime(){
   return {Datum, Uhrzeit,}
 }
 
-function Change() {
+function Change_N() {
   console.log("change");
   saveNetwork(navigator.connection.type, navigator.onLine);
 }
@@ -72,7 +72,7 @@ navigator.connection.addEventListener('typechange', Change);
 
 navigator.getBattery.then(function (battery) { //opens stream to Battery API
 
-function Change() {
+/*function Change_B() {
   console.log("change");
   saveAkku(battery.level, battery.charging);
   }
@@ -86,4 +86,4 @@ console.log(battery.level);
 
 //saveAkku(battery.level, battery.charging)
 
-});
+});*/

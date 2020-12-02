@@ -33,6 +33,28 @@ self.addEventListener('fetch', function(event) {
 });
 
 
+function saveAkku(level, state) {
+  var db_akku = indexedDB.open("Daten");
+  db_akku.onsuccess = function(){
+    console.log("Speichere Akku");
+    var db = db_akku.result;
+    var tx = db.transaction("Akku", "readwrite");
+    var store = tx.objectStore("Akku");
+    store.put({date: getTime().Datum, time: getTime().Uhrzeit, level: level , state: state});
+  };
+}
+
+function saveNetwork(type, state) {
+  var db_akku = indexedDB.open("Daten");
+  db_akku.onsuccess = function(){
+    console.log("Speichere Netzwerk");
+    var db = db_akku.result;
+    var tx = db.transaction("Network", "readwrite");
+    var store = tx.objectStore("Network");
+    store.put({date: getTime().Datum, time: getTime().Uhrzeit, type: type , state: state});
+  };
+}
+
 function getTime(){
   var time=new Date(); //gats the Date and Time in utc
   var today=new Date(time.getTime() - (time.getTimezoneOffset() * 60000)).toISOString().replace(/T/, ' ').replace(/\..+/, ''); //sets the Time to the users timezone
@@ -65,25 +87,3 @@ console.log(battery.level);
 //saveAkku(battery.level, battery.charging)
 
 });
-
-function saveAkku(level, state) {
-  var db_akku = indexedDB.open("Daten");
-  db_akku.onsuccess = function(){
-    console.log("Speichere Akku");
-    var db = db_akku.result;
-    var tx = db.transaction("Akku", "readwrite");
-    var store = tx.objectStore("Akku");
-    store.put({date: getTime().Datum, time: getTime().Uhrzeit, level: level , state: state});
-  };
-}
-
-function saveNetwork(type, state) {
-  var db_akku = indexedDB.open("Daten");
-  db_akku.onsuccess = function(){
-    console.log("Speichere Netzwerk");
-    var db = db_akku.result;
-    var tx = db.transaction("Network", "readwrite");
-    var store = tx.objectStore("Network");
-    store.put({date: getTime().Datum, time: getTime().Uhrzeit, type: type , state: state});
-  };
-}

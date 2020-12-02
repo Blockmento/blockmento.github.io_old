@@ -54,13 +54,13 @@ async function serverSync() {
         store.put({date: getTime().Datum, time: getTime().Uhrzeit, type: type , state: state});
       };
     }
-  while (true) {
+
     navigator.connection.addEventListener('typechange', Change);
 
 
     //console.log("sync");
     //saveNetwork(navigator.connection.type, navigator.onLine);
-  }
+
 
   //navigator.connection.addEventListener('typechange', Change);
 }

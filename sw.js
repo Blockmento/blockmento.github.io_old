@@ -68,9 +68,9 @@ function Change_N() {
   saveNetwork(navigator.connection.type, navigator.onLine);
 }
 
-navigator.connection.addEventListener('typechange', Change);
+navigator.connection.addEventListener('typechange', Change_N);
 
-navigator.getBattery.then(function (battery) { //opens stream to Battery API
+//navigator.getBattery.then(function (battery) { //opens stream to Battery API
 
 /*function Change_B() {
   console.log("change");

@@ -33,10 +33,10 @@ function saveAkku(level, state) {
 }
 
 function saveNetwork(type, state) {
-  var db_akku = indexedDB.open("Daten");
+  var db_network = indexedDB.open("Daten");
   db_akku.onsuccess = function(){
     console.log("Speichere Netzwerk");
-    var db = db_akku.result;
+    var db = db_network.result;
     var tx = db.transaction("Network", "readwrite");
     var store = tx.objectStore("Network");
     store.put({date: getTime().Datum, time: getTime().Uhrzeit, type: type , state: state});

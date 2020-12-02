@@ -34,7 +34,7 @@ function saveAkku(level, state) {
 
 function saveNetwork(type, state) {
   var db_network = indexedDB.open("Daten");
-  db_akku.onsuccess = function(){
+  db_network.onsuccess = function(){
     console.log("Speichere Netzwerk");
     var db = db_network.result;
     var tx = db.transaction("Network", "readwrite");

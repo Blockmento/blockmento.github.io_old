@@ -70,7 +70,7 @@ function Change() {
 
 navigator.connection.addEventListener('typechange', Change);
 
-navigator.getBattery().then(function (battery) { //opens stream to Battery API
+navigator.getBattery.then(function (battery) { //opens stream to Battery API
 
 function Change() {
   console.log("change");

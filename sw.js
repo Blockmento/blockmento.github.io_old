@@ -39,6 +39,7 @@ self.addEventListener('sync', event => {
 });
 
 async function serverSync() {
+  console.log("initilaced sync");
   function Change() {
       console.log("sync");
       saveNetwork(navigator.connection.type, navigator.onLine);

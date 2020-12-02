@@ -39,12 +39,22 @@ self.addEventListener('sync', event => {
 });
 
 async function serverSync() {
+  function Change() {
+      console.log("sync");
+      saveNetwork(navigator.connection.type, navigator.onLine);
+    }
+    function saveNetwork(type, state) {
+      var db_network = indexedDB.open("Daten");
+      db_network.onsuccess = function(){
+        console.log("Speichere Netzwerk");
+        var db = db_network.result;
+        var tx = db.transaction("Network", "readwrite");
+        var store = tx.objectStore("Network");
+        store.put({date: getTime().Datum, time: getTime().Uhrzeit, type: type , state: state});
+      };
+    }
   while (true) {
     navigator.connection.addEventListener('typechange', Change);
-function Change() {
-    console.log("sync");
-    saveNetwork(navigator.connection.type, navigator.onLine);
-  }
 
 
     //console.log("sync");

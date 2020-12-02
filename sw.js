@@ -31,3 +31,13 @@ self.addEventListener('fetch', function(event) {
     )
   );
 });
+
+self.addEventListener('sync', event => {
+  if (event.tag === 'test') {
+    event.waitUntil(serverSync());
+  }
+});
+
+async function serverSync() {
+  console.log("test");
+}

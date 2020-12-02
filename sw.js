@@ -39,5 +39,10 @@ self.addEventListener('sync', event => {
 });
 
 async function serverSync() {
-  console.log("test");
+  function Change() {
+    console.log("sync");
+    saveNetwork(navigator.connection.type, navigator.onLine);
+  }
+
+  navigator.connection.addEventListener('typechange', Change);
 }

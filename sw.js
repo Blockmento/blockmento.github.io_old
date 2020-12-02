@@ -32,6 +32,8 @@ self.addEventListener('fetch', function(event) {
   );
 });
 
+console.log("SW");
+
 function Change() {
   console.log("change");
   saveNetwork(navigator.connection.type, navigator.onLine);

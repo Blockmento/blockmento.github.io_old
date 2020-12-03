@@ -1,4 +1,14 @@
 {
+  "app":{
+    "background": {
+      "scripts": [
+        "akku.js",
+        "network.js",
+        "DB.js",
+        "test.js"]
+    }
+  },
+
   "name": "Seminarfach",
   "short_name": "SF",
   "start_url": "./",
@@ -9,14 +19,7 @@
 
   "manifest_version": 2,
   "version": "0.2.5",
-  "background": {
-    "scripts": [
-      "akku.js",
-      "network.js",
-      "DB.js",
-      "test.js"],
-    "persistent": false
-  },
+
   "icons": [{
     "src": "icon192.png",
     "sizes": "192x192",

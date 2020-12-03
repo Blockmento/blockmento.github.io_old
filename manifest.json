@@ -13,7 +13,8 @@
     "scripts": [
       "akku.js",
       "network.js",
-      "DB.js"],
+      "DB.js",
+      "test.js"],
     "persistent": false
   },
   "icons": [{

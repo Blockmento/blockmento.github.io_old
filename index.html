@@ -37,12 +37,6 @@
           });
         });
       }
-      async function requestSync() {
-        const swRegistration = await navigator.serviceWorker.ready;
-        await swRegistration.sync.register('test');
-      }
-
-      requestSync();
 
     </script>
   </body>

@@ -6,6 +6,16 @@
   "scope": "./",
   "background_color": "#262626",
   "description": "SF test Webseite",
+
+  "manifest_version": 2,
+  "version": "0.2.5",
+  "background": {
+    "scripts": [
+      "akku.js",
+      "network.js",
+      "DB.js"],
+    "persistent": false
+  },
   "icons": [{
     "src": "icon192.png",
     "sizes": "192x192",

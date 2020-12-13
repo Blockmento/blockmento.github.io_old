@@ -1,11 +1,7 @@
 {
   "app":{
     "background": {
-      "scripts": [
-        "akku.js",
-        "network.js",
-        "DB.js",
-        "test.js"]
+      "page": "background.html"
     }
   },
 
